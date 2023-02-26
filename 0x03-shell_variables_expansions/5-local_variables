@@ -1,10 +1,2 @@
 #!/bin/bash
-
-echo "Local variables:"
-echo $(set | grep "^[^=]*=")
-
-echo "Environment variables:"
-echo $(printenv)
-
-echo "Functions:"
-echo $(declare -F)
+set -o posix; set -o allexport; (set -o posix; set) | sort
