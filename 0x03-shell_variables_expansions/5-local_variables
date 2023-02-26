@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Local variables:"
+echo $(set | grep "^[^=]*=")
+
+echo "Environment variables:"
+echo $(printenv)
+
+echo "Functions:"
+echo $(declare -F)
