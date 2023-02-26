@@ -1,2 +1,9 @@
 #!/bin/bash
-echo $PATH |tr ":" "\n" | wc-l 
+
+# Split PATH variable into an array using colon as delimiter
+IFS=':' read -ra DIRS <<< "$PATH"
+
+# Count the number of elements in the array
+count=${#DIRS[@]}
+
+echo "Number of directories in PATH: $count"
